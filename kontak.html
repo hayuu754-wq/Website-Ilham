@@ -10,9 +10,34 @@
         
         /* Header & Avatar */
         header { background: linear-gradient(135deg, #004494, #0088ff); color: white; text-align: center; padding: 60px 20px 40px; }
-        .avatar { width: 140px; height: 140px; background: linear-gradient(135deg, #ffffff, #e0f0ff); border: 6px solid rgba(255, 255, 255, 0.8); border-radius: 50%; margin: 0 auto 20px auto; box-shadow: 0 10px 25px rgba(0,0,0,0.2); display: flex; align-items: center; justify-content: center; font-size: 2.8rem; font-weight: 800; color: #0056b3; letter-spacing: 2px; transition: all 0.4s ease; }
+        .avatar { 
+            width: 140px; 
+            height: 140px; 
+            background: linear-gradient(135deg, #ffffff, #e0f0ff); 
+            border: 6px solid rgba(255, 255, 255, 0.8); 
+            border-radius: 50%; 
+            margin: 0 auto 20px auto; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2); 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            font-size: 2.8rem; 
+            font-weight: 800; 
+            color: #0056b3; 
+            letter-spacing: 2px; 
+            transition: all 0.4s ease; 
+            overflow: hidden; /* Tambahan agar foto tidak keluar dari batas lingkaran */
+        }
+        
+        /* Tambahan CSS untuk gambar di dalam avatar */
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Memastikan foto proporsional */
+        }
+        
         .avatar:hover { transform: scale(1.08) translateY(-5px); box-shadow: 0 15px 35px rgba(0,0,0,0.3); border-color: #ffffff; cursor: pointer; }
-        .avatar::after { content: "MIA"; }
+        
         header h1 { font-size: 2.8rem; margin-bottom: 10px; font-weight: 700; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); }
         header p { font-size: 1.2rem; opacity: 0.9; }
 
@@ -42,14 +67,18 @@
 <body>
 
     <header>
-        <div class="avatar"></div>
+        <div class="avatar">
+            <!-- Menambahkan gambar profil di sini -->
+            <img src="ilham.jpeg" alt="Foto Ilham">
+        </div>
         <h1>Muhammad Ilham Aulia</h1>
         <p>Mari Terhubung Bersama</p>
     </header>
 
     <nav>
         <a href="index.html">Beranda</a>
-        <a href="artikel.html">Artikel</a>
+        <!-- Memastikan huruf A pada Artikel.html besar -->
+        <a href="Artikel.html">Artikel</a>
         <a href="kontak.html" class="active">Kontak</a>
     </nav>
 
@@ -59,7 +88,8 @@
             <p>Tertarik untuk berdiskusi, bekerja sama, atau sekadar menyapa? Silakan hubungi saya melalui salah satu platform di bawah ini.</p>
             
             <div class="contact-links">
-                <a href="mailto:ilham.aulis@contohemail.com" class="contact-btn">
+                <!-- Memperbaiki link mailto agar sesuai dengan email yang ditampilkan -->
+                <a href="mailto:hayuu754@gmail.com" class="contact-btn">
                     <span class="icon">📧</span> Email: hayuu754@gmail.com
                 </a>
                 <a href="#" class="contact-btn">
@@ -73,7 +103,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 Muhammad Ilham Aulis. Didesain dengan penuh semangat.</p>
+        <p>&copy; 2026 Muhammad Ilham Aulia. Didesain dengan penuh semangat.</p>
     </footer>
 
 </body>
