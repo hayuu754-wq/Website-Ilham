@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak - Muhammad Ilham Aulia</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+        body { background-color: #f4f9ff; color: #333; display: flex; flex-direction: column; min-height: 100vh; }
+        
+        /* Header & Avatar */
+        header { background: linear-gradient(135deg, #004494, #0088ff); color: white; text-align: center; padding: 60px 20px 40px; }
+        .avatar { width: 140px; height: 140px; background: linear-gradient(135deg, #ffffff, #e0f0ff); border: 6px solid rgba(255, 255, 255, 0.8); border-radius: 50%; margin: 0 auto 20px auto; box-shadow: 0 10px 25px rgba(0,0,0,0.2); display: flex; align-items: center; justify-content: center; font-size: 2.8rem; font-weight: 800; color: #0056b3; letter-spacing: 2px; transition: all 0.4s ease; }
+        .avatar:hover { transform: scale(1.08) translateY(-5px); box-shadow: 0 15px 35px rgba(0,0,0,0.3); border-color: #ffffff; cursor: pointer; }
+        .avatar::after { content: "MIA"; }
+        header h1 { font-size: 2.8rem; margin-bottom: 10px; font-weight: 700; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); }
+        header p { font-size: 1.2rem; opacity: 0.9; }
+
+        /* Navigasi */
+        nav { background-color: #ffffff; display: flex; justify-content: center; gap: 15px; padding: 15px; box-shadow: 0 4px 15px rgba(0, 86, 179, 0.1); position: sticky; top: 0; z-index: 10; }
+        nav a { text-decoration: none; color: #0056b3; font-weight: 600; padding: 10px 25px; border-radius: 30px; transition: all 0.3s ease; font-size: 1rem; }
+        nav a.active { background-color: #0056b3; color: #ffffff; box-shadow: 0 4px 10px rgba(0, 86, 179, 0.3); }
+        nav a:hover:not(.active) { background-color: #e0f0ff; color: #004494; }
+
+        /* Area Kontak */
+        main { flex-grow: 1; max-width: 600px; margin: 50px auto; padding: 0 20px; width: 100%; }
+        
+        .contact-card { background-color: #ffffff; padding: 50px 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0, 86, 179, 0.08); text-align: center; border-top: 8px solid #0088ff; }
+        .contact-card h2 { color: #004494; margin-bottom: 15px; font-size: 2rem; }
+        .contact-card p { line-height: 1.8; color: #555; margin-bottom: 30px; font-size: 1.05rem; }
+
+        /* Desain Tombol Kontak (Link-tree Style) */
+        .contact-links { display: flex; flex-direction: column; gap: 15px; }
+        .contact-btn { display: flex; align-items: center; justify-content: center; background-color: #f4f9ff; color: #0056b3; text-decoration: none; padding: 15px 20px; border-radius: 12px; font-weight: 600; font-size: 1.1rem; border: 2px solid transparent; transition: all 0.3s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.03); }
+        .contact-btn .icon { font-size: 1.4rem; margin-right: 12px; }
+        
+        .contact-btn:hover { background-color: #0056b3; color: #ffffff; border-color: #004494; transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0, 86, 179, 0.2); }
+
+        footer { text-align: center; padding: 25px; background-color: #004494; color: #ffffff; font-size: 0.95rem; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="avatar"></div>
+        <h1>Muhammad Ilham Aulia</h1>
+        <p>Mari Terhubung Bersama</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Beranda</a>
+        <a href="artikel.html">Artikel</a>
+        <a href="kontak.html" class="active">Kontak</a>
+    </nav>
+
+    <main>
+        <div class="contact-card">
+            <h2>Hubungi Saya</h2>
+            <p>Tertarik untuk berdiskusi, bekerja sama, atau sekadar menyapa? Silakan hubungi saya melalui salah satu platform di bawah ini.</p>
+            
+            <div class="contact-links">
+                <a href="mailto:ilham.aulis@contohemail.com" class="contact-btn">
+                    <span class="icon">📧</span> Email: hayuu754@gmail.com
+                </a>
+                <a href="#" class="contact-btn">
+                    <span class="icon">📸</span> Instagram: @ilhmseishiroo
+                </a>
+                <a href="#" class="contact-btn">
+                    <span class="icon">💼</span> LinkedIn: Muhammad Ilham Aulia
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Muhammad Ilham Aulis. Didesain dengan penuh semangat.</p>
+    </footer>
+
+</body>
+</html>

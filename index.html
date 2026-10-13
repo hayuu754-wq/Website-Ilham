@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beranda - Muhammad Ilham Aulia</title>
+    <style>
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+        }
+        body { 
+            background-color: #f4f9ff; 
+            color: #333; 
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header { 
+            background: linear-gradient(135deg, #004494, #0088ff); 
+            color: white; 
+            text-align: center; 
+            padding: 60px 20px 40px; 
+            position: relative;
+            overflow: hidden;
+        }
+
+        .avatar { 
+            width: 140px; 
+            height: 140px; 
+            background: linear-gradient(135deg, #ffffff, #e0f0ff);
+            border: 6px solid rgba(255, 255, 255, 0.8); 
+            border-radius: 50%; 
+            margin: 0 auto 20px auto; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2); 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #0056b3;
+            letter-spacing: 2px;
+            transition: all 0.4s ease;
+            position: relative;
+            z-index: 2;
+            overflow: hidden; /* Tambahan agar gambar tidak keluar dari lingkaran */
+        }
+
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Memastikan foto proporsional */
+        }
+
+        .avatar:hover {
+            transform: scale(1.08) translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            border-color: #ffffff;
+            cursor: pointer;
+        }
+        
+        /* Kode .avatar::after { content: "MIA"; } dihapus agar teks tidak menutupi gambar */
+
+        header h1 { font-size: 2.8rem; margin-bottom: 10px; font-weight: 700; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); position: relative; z-index: 2; }
+        header p { font-size: 1.2rem; opacity: 0.9; position: relative; z-index: 2; }
+
+        nav { 
+            background-color: #ffffff; 
+            display: flex; 
+            justify-content: center; 
+            gap: 15px; 
+            padding: 15px; 
+            box-shadow: 0 4px 15px rgba(0, 86, 179, 0.1); 
+            position: sticky; 
+            top: 0; 
+            z-index: 10;
+        }
+        nav a { text-decoration: none; color: #0056b3; font-weight: 600; padding: 10px 25px; border-radius: 30px; transition: all 0.3s ease; font-size: 1rem; }
+        nav a.active { background-color: #0056b3; color: #ffffff; box-shadow: 0 4px 10px rgba(0, 86, 179, 0.3); }
+        nav a:hover:not(.active) { background-color: #e0f0ff; color: #004494; }
+
+        main { 
+            flex-grow: 1;
+            max-width: 800px; 
+            margin: 50px auto; 
+            padding: 0 20px; 
+        }
+
+        .card { 
+            background-color: #ffffff; 
+            padding: 40px; 
+            border-radius: 20px; 
+            box-shadow: 0 10px 30px rgba(0, 86, 179, 0.08); 
+            border-top: 8px solid #0088ff; 
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 40px; /* Jarak antar kartu */
+        }
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 86, 179, 0.12);
+        }
+        .card-center { text-align: center; }
+        
+        .card-badge {
+            background-color: #e0f0ff;
+            color: #0056b3;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        h2 { color: #004494; margin-bottom: 20px; font-size: 2.2rem; }
+        h3 { color: #0056b3; font-size: 1.3rem; margin: 20px 0 10px 0; display: flex; align-items: center; gap: 8px;}
+        
+        p.desc { line-height: 1.8; color: #555; font-size: 1.05rem; margin-bottom: 20px; }
+        
+        /* Desain List (Bahan & Langkah) */
+        ul, ol { margin-left: 25px; margin-bottom: 20px; color: #555; line-height: 1.8; font-size: 1.05rem; }
+        li { margin-bottom: 8px; }
+        li strong { color: #004494; }
+
+        /* Tombol Aksi */
+        .btn-group { display: flex; justify-content: center; gap: 15px; margin-top: 10px; }
+        .btn { text-decoration: none; padding: 12px 30px; border-radius: 30px; font-weight: bold; transition: all 0.3s ease; }
+        .btn-primary { background-color: #0056b3; color: white; box-shadow: 0 4px 15px rgba(0, 86, 179, 0.3); }
+        .btn-primary:hover { background-color: #004494; transform: translateY(-2px); }
+        .btn-outline { border: 2px solid #0056b3; color: #0056b3; }
+        .btn-outline:hover { background-color: #0056b3; color: white; }
+
+        /* Footer */
+        footer { text-align: center; padding: 25px; background-color: #004494; color: #ffffff; font-size: 0.95rem; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="avatar">
+            <!-- Menambahkan tag img dan memanggil file gambar -->
+            <img src="ilham.jpeg" alt="Foto Ilham">
+        </div>
+        <h1>Muhammad Ilham Aulia</h1>
+        <p>Personal Blog & Portfolio</p>
+    </header>
+
+    <nav>
+        <a href="index.html" class="active">Beranda</a>
+        <a href="artikel.html">Artikel</a>
+        <a href="kontak.html">Kontak</a>
+    </nav>
+
+    <main>
+        <div class="card card-center">
+            <div class="card-badge">Selamat Datang</div>
+            <h2>Halo, Saya Ilham!</h2>
+            <p class="desc">
+                Terima kasih sudah berkunjung ke blog pribadi saya. Di sini saya akan membagikan berbagai tulisan, pemikiran, dan aktivitas menarik saya.
+            </p>
+            <div class="btn-group">
+                <a href="artikel.html" class="btn btn-primary">Lihat Artikel Lain</a>
+                <a href="kontak.html" class="btn btn-outline">Hubungi Saya</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-badge" style="background-color: #fff3cd; color: #856404;">Artikel Pilihan</div>
+            <h2 style="font-size: 1.8rem; text-align: center;">Cara Membuat Keju Sederhana di Rumah</h2>
+            <p class="desc">
+                Membuat keju sendiri (fresh cheese / keju segar) ternyata tidak sesulit yang dibayangkan. Hanya dengan alat dapur biasa dan beberapa bahan sederhana, Anda sudah bisa menikmati keju buatan tangan yang sehat dan lezat!
+            </p>
+
+            <h3>🧀 Bahan-bahan yang Diperlukan:</h3>
+            <ul>
+                <li><strong>1 Liter Susu Sapi Segar</strong> (Gunakan susu pasteurisasi murni, hindari susu UHT karena sulit menggumpal).</li>
+                <li><strong>3-4 Sendok Makan Asam</strong> (Bisa menggunakan air perasan lemon segar atau cuka putih dapur).</li>
+                <li><strong>Garam secukupnya</strong> (Untuk memberi rasa gurih pada keju).</li>
+            </ul>
+
+            <h3>🧑‍🍳 Langkah-langkah Pembuatan:</h3>
+            <ol>
+                <li><strong>Panaskan Susu:</strong> Tuang susu ke dalam panci. Panaskan dengan api sedang sambil sesekali diaduk agar bagian bawahnya tidak gosong. Panaskan hingga hangat dan nyaris mendidih (muncul gelembung kecil di pinggir panci), lalu <strong>matikan api</strong>.</li>
+                <li><strong>Proses Penggumpalan (Koagulasi):</strong> Tuangkan air lemon atau cuka sedikit demi sedikit ke dalam susu panas. Aduk perlahan. Susu akan langsung pecah dan terpisah menjadi gumpalan putih (dadih/curd) dan air kekuningan (whey). Diamkan selama 10-15 menit.</li>
+                <li><strong>Saring Keju:</strong> Siapkan saringan yang sudah dilapisi dengan kain bersih tipis (cheesecloth). Tuang campuran tadi ke atas saringan agar air (whey) terpisah dari dadih keju.</li>
+                <li><strong>Bumbui dan Cetak:</strong> Peras sisa air pada kain dengan lembut. Pindahkan dadih keju ke mangkuk, tambahkan sedikit garam, lalu aduk rata. Anda bisa mencetaknya di wadah kecil dan menyimpannya di dalam kulkas hingga padat (sekitar 1-2 jam).</li>
+            </ol>
+            
+            <p class="desc" style="margin-bottom: 0; margin-top: 20px; font-weight: 500; color: #004494; text-align: center;">
+                ✨ Voila! Keju segar buatan rumah siap dinikmati bersama roti panggang atau salad kesukaan Anda!
+            </p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Muhammad Ilham Aulia. Didesain dengan penuh semangat.</p>
+    </footer>
+
+</body>
+</html>
